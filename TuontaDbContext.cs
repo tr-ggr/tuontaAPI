@@ -15,6 +15,8 @@ namespace tuontaAPI
 
         public DbSet<MatchStatus> MatchStatuses { get; set; }
         public DbSet<MatchedItem> MatchedItems { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+
 
     }
 }

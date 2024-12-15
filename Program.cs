@@ -22,6 +22,11 @@ builder.Services.AddScoped<IMatchRepository, MatchRepository>();
 builder.Services.AddTransient<IMatchService, MatchService>();
 
 
+builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+builder.Services.AddTransient<INotificationService, NotificationService>();
+
+
+
 builder.Services.AddDbContext<TuontaDbContext>(
     db => db.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Scoped
 );
