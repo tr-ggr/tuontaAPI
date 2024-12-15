@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tuontaAPI;
 
@@ -11,9 +12,11 @@ using tuontaAPI;
 namespace tuontaAPI.Migrations
 {
     [DbContext(typeof(TuontaDbContext))]
-    partial class TuontaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241215181832_Changes on profile nullable")]
+    partial class Changesonprofilenullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

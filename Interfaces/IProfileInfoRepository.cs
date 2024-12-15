@@ -5,6 +5,7 @@ namespace tuontaAPI.Interfaces
     {
         public List<Profile> GetProfiles();
         public Profile? GetProfileById(int id);
+        public bool CreateProfile(Profile profile);
 
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tuontaAPI;
 
@@ -11,9 +12,11 @@ using tuontaAPI;
 namespace tuontaAPI.Migrations
 {
     [DbContext(typeof(TuontaDbContext))]
-    partial class TuontaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241215181330_Changes on profile")]
+    partial class Changesonprofile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -169,6 +172,7 @@ namespace tuontaAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Bio")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Birthday")
@@ -186,7 +190,7 @@ namespace tuontaAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Distance")
+                    b.Property<int>("Distance")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -202,6 +206,7 @@ namespace tuontaAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.PrimitiveCollection<string>("Hobbies")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsAdmin")
@@ -219,6 +224,7 @@ namespace tuontaAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.PrimitiveCollection<string>("ProfileImages")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Province")

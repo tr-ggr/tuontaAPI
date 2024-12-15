@@ -21,5 +21,11 @@ namespace tuontaAPI.Repositories
         {
             return _context.Profiles.Find(id);
         }
+
+        public bool CreateProfile(Profile profile)
+        {
+            _context.Profiles.Add(profile);
+            return _context.SaveChanges() > 0;
+        }
     }
 }

@@ -2,10 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using tuontaAPI.Interfaces;
 using tuontaAPI.Models;
+using tuontaAPI.DTO;
 
 namespace tuontaAPI.Controllers
 {
     [Route("api/profiles")]
+
+    
     [ApiController]
     public class ProfilesController : ControllerBase
     {
@@ -36,6 +39,22 @@ namespace tuontaAPI.Controllers
 
             return Ok(result);
         }
+
+
+        [HttpPost("register/")]
+        public ActionResult<Profile> CreateUser(ProfileDto profileDto)
+        {
+            bool res = _profileInfoService.CreateProfile(profileDto);
+
+            if (res)
+            {
+                return Ok(); // 200  
+            } else
+            {
+                return BadRequest(); // 400
+            }
+        }
+
 
 
     }

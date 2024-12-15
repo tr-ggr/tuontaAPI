@@ -1,4 +1,5 @@
 ﻿using tuontaAPI.DTO;
+using tuontaAPI.Models;
 
 namespace tuontaAPI.Interfaces
 {
@@ -6,6 +7,8 @@ namespace tuontaAPI.Interfaces
     {
         public List<ProfileDto> GetProfiles();
         public ProfileDto? GetProfileById(int id);
+
+        public bool CreateProfile(ProfileDto profileDto);
     }
 
 }
