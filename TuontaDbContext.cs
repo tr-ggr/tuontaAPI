@@ -18,7 +18,8 @@ namespace tuontaAPI
         public DbSet<MatchStatus> MatchStatuses { get; set; }
         public DbSet<MatchedItem> MatchedItems { get; set; }
         public DbSet<Notification> Notifications { get; set; }
-
-
+        public DbSet<VideoSession> VideoSessions { get; set; }
+        public DbSet<Participant> Participants { get; set; }
+        public DbSet<SessionChatMessage> SessionChatMessages { get; set; }
     }
 }

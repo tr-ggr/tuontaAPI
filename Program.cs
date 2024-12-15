@@ -6,8 +6,6 @@ using tuontaAPI.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
 // Add services to the container.
 // Register the repository and service in the DI container
 builder.Services.AddScoped<IVerifyIdentityRepository, VerifyIdentityRepository>();
@@ -25,11 +23,18 @@ builder.Services.AddTransient<IChatItemService, ChatItemService>();
 builder.Services.AddScoped<IMatchRepository, MatchRepository>();
 builder.Services.AddTransient<IMatchService, MatchService>();
 
-
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddTransient<INotificationService, NotificationService>();
 
+// Add new repositories and services
+builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
+builder.Services.AddTransient<IParticipantService, ParticipantService>();
 
+builder.Services.AddScoped<ISessionChatMessageRepository, SessionChatMessageRepository>();
+builder.Services.AddTransient<ISessionChatMessageService, SessionChatMessageService>();
+
+builder.Services.AddScoped<IVideoSessionRepository, VideoSessionRepository>();
+builder.Services.AddTransient<IVideoSessionService, VideoSessionService>();
 
 builder.Services.AddDbContext<TuontaDbContext>(
     db => db.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Scoped
@@ -48,12 +53,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-
 var app = builder.Build();
-
-
-
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
