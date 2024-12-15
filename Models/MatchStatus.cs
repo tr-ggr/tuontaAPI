@@ -11,7 +11,7 @@ namespace tuontaAPI.Models
         public int Id { get; set; }
         public int user1Id { get; set; }
         public int user2Id { get; set; }
-
+        public bool isActive { get; set; } = true;
 
         public DateTime date_created { get; set; } = DateTime.Now;
     }

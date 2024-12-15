@@ -47,7 +47,7 @@ namespace tuontaAPI.Services
         {
             var chatItem = new ChatItem
             {
-                ChatId = chatItemDto.ChatId,
+                ChatId = (int)chatItemDto.ChatId,
                 SenderId = chatItemDto.SenderId,
                 Message = chatItemDto.Message,
                 Timestamp = chatItemDto.Timestamp

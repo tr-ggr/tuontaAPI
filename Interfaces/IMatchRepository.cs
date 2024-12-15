@@ -10,5 +10,7 @@ namespace tuontaAPI.Repositories
         public List<MatchStatus> GetAllMatchStatus();
 
         public bool CreateMatchStatus(MatchStatus matchStatus);
+        public Chat UpdateMatchStatus(int id, ChatItem chatItem);
+        public List<Profile> GetUsersOfMatchedItem(int id);
     }
 }

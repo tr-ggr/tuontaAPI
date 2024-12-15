@@ -55,7 +55,26 @@ namespace tuontaAPI.Controllers
                 return BadRequest();
             }
         }
-        
+
+        [HttpPut("update/{id}")]
+        public IActionResult UpdateMatchRequest(int id, ChatItemDto chatItemDto)
+        {
+            var res = _matchService.UpdateMatchStatus(id, chatItemDto);
+
+            if(res == null)
+            {
+                return BadRequest();
+            } else
+            {
+                return Ok(res);
+            }
+        }
+
+        [HttpGet("users/{id}")]
+        public IActionResult GetUsersOfMatchStatus(int id)
+        {
+            return Ok(_matchService.GetUsersOfMatchedItem(id));
+        }
     }
 }
 

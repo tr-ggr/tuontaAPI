@@ -10,6 +10,8 @@ namespace tuontaAPI.Interfaces
         public List<MatchStatusDto> GetAllMatchStatusByUserId(int userId);
 
         public bool CreateMatchStatus(MatchStatusDto matchStatus);
+        public ChatDto UpdateMatchStatus(int id, ChatItemDto chatItemDto);
+        public List<ProfileDto> GetUsersOfMatchedItem(int id);
     }
 }
 

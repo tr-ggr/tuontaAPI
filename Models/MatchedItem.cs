@@ -13,7 +13,7 @@ namespace tuontaAPI.Models
         public int MatchStatus1Id { get; set; }
         public int MatchStatus2Id { get; set; }
 
-        public bool isChatted { get; set; } = false;
+        public bool isActive { get; set; } = true;
 
 
         public DateTime date_matched {  get; set; } = DateTime.Now;
