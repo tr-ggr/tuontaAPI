@@ -9,6 +9,8 @@ namespace tuontaAPI
         public TuontaDbContext(DbContextOptions<TuontaDbContext> options) : base(options)
         {
         }
+        
+        public DbSet<VerifyIdentity> VerifyIdentity { get; set; }
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Chat> Chats { get; set; }
         public DbSet<ChatItem> ChatItems { get; set; }

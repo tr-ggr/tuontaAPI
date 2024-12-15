@@ -9,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
+// Register the repository and service in the DI container
+builder.Services.AddScoped<IVerifyIdentityRepository, VerifyIdentityRepository>();
+builder.Services.AddScoped<IVerifyIdentityService, VerifyIdentityService>();
+
 builder.Services.AddTransient<IProfileInfoService, ProfileInfoService>();
 builder.Services.AddScoped<IProfileInfoRepository, ProfileInfoRepository>();
 
